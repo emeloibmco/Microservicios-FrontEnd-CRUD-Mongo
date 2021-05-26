@@ -47,6 +47,9 @@ readonly URL_API_DELETE = 'URL_Backend';
 ```
 localhost:4200
 ```
+
+> Nota: en este caso la aplicación de forma local funciona con el puerto 4200, que es por defecto el que utlizan las aplicaciones en Angular.
+
 Una vez cargue la aplicación puede observar 3 ventanas distintas de la siguiente manera:
 
 Una ventana **Inicio** en donde puede observar dos botones que le dan las opciones: Agregar Transacción y Ver Transacciones.
@@ -57,8 +60,6 @@ Una ventana **Agregar** en donde puede colocar los datos respectivos de su trans
 
 Una ventana **Ver Transacciones** en donde puede visualizar las transacciones agregadas.
 <p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo/blob/master/Imagenes/Transacciones.PNG"></p>
-
-> Nota: en este caso la aplicación de forma local funciona con el puerto 4200, que es por defecto el que utlizan las aplicaciones en Angular.
 
 
 
