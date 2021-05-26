@@ -34,25 +34,8 @@ git clone https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo
 
 ## Paso 2. 
 ### Editar Frontend de la aplicación 🛠
-Para que el backend de su aplicación funcione correctamente debe agregar las respectivas credenciales del servicio *Databases for MongoDB* en el código. Por esto, siga los pasos que se muestran a continuación:
-1. Ingrese al servicio *Databases for MongoDB* creado de forma previa, recuerde que puede ser público o privado. Este servicio lo puede encontrar en la lista de recursos de su cuenta.
-
-3. De click en la pestaña *Overview*, vaya a la parte inferior en donde se encuentran los endpoints y en la opción *Quick Start* descargue el certificado TLS.
-<p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-Backend-CRUD-Mongo/blob/main/Imagenes/Certificado-TLS.gif"></p>
-
-3. De click en la pestaña *Credenciales de Servicio* y verifique que exista un conjunto de credenciales. En caso de que no se visualice información al respecto, de click en la opción *Nueva Credencial*.
-<p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-Backend-CRUD-Mongo/blob/main/Imagenes/Credenciales.gif"></p>
-
-4. De click en las credenciales del servicio creadas, visualice y copie los valores que aparecen en las siguientes variables:
-* USERNAME (-u).
-* PASSWORD (-p).
-* Hostname (son 3 direcciones distintas).
-* Port.
-* Database.
-
-> Nota: Las variables Hostname, Port y Database también las puede encontrar en la pestaña *Overview*, parte inferior en la opción *MongoDB*.
-
-5. Abra el código del backend en su computador e ingrese a la siguiente ruta: server/conection. En esta ubicación debe encontrar el archivo *mongo.js*. Junto a este archivo agregue el certificado TLS descargado en el ítem 1, se debe visualizar de la siguiente manera:
+Para que el frontend de su aplicación funcione correctamente junto con el backend, debe agregar el enlace obtenido un vez ha desplegado el backend en Kubernetes. Por esto, siga los pasos que se muestran a continuación:
+1. Abra el código del frontend en su computador e ingrese a la siguiente ruta: server/conection. En esta ubicación debe encontrar el archivo *mongo.js*. Junto a este archivo agregue el certificado TLS descargado en el ítem 1, se debe visualizar de la siguiente manera:
 <p align="center"><img width="300" src="https://github.com/emeloibmco/Microservicios-Backend-CRUD-Mongo/blob/main/Imagenes/Archivos.PNG"></p>
 
 > Nota: Recuerde que en su caso el nombre del certificado es distinto.
@@ -72,14 +55,12 @@ const mongoDBName = process.env.MONGO_DB_NAME || 'Valor_Database';
 var ca = [require('fs').readFileSync(__dirname + "/nombre_certificado_TLS")];
 ```
 
-8. Guarde los cambios realizados al backend de la aplicación. Si desea probar el código abra una ventana de *Windows PowerShell*, vaya a la carpeta que contiene el archivo *package.json* y ejecute el comando *npm run start*. Posteriormente en el navegador escriba:
+8. Guarde los cambios realizados al frontend de la aplicación. Si desea probar el código abra una ventana de *Windows PowerShell*, vaya a la carpeta que contiene el archivo *package.json* y ejecute el comando *npm run start*. Posteriormente en el navegador escriba:
 ```
-localhost:8080/api/customers
+localhost:4200
 ```
 
-> Nota 1: esta prueba funciona si trabaja con credenciales de MongoDB público. En caso de trabajar con credenciales de MongoDB privado va a obtener un error por fallas en tiempos de conexión, aún así, esto no afectará el funcionamiento del backend en Kubernetes.
-
-> Nota 2: En caso de no colocar en la URL **/api/customers**, como respuesta va a obtener en el navegador: **CANNOT GET /**, de lo contrario debería observar como respuesta **[]**.
+> Nota: en este caso la aplicación de forma local funciona con el puerto 4200, que es por defecto el que utlizan las aplicaciones en Angular.
 
 
 ## Paso 3. 
@@ -98,7 +79,7 @@ docker run --publish port:port_dockerfile <nombre_imagen:tag>
 ```
 y coloque en el navegador
 ```
-localhost:port/api/customers
+localhost:port
 ```
 
 > Nota: En la variable port puede colocar cualquier valor, por ejemplo 8085. En la variable port_dockerfile por defecto coloque 8080, ya que es el puerto establecido para este ejercicio.
@@ -147,7 +128,7 @@ docker push us.icr.io/<namespace>/<nombre_imagen:tag>
 
 ## Paso 5.
 ### Desplegar imagen del Frontend en Kubernetes🚀
-Para desplegar la imagen del backend de la aplicación en Kubernetes, realice lo siguiente:
+Para desplegar la imagen del frontend de la aplicación en Kubernetes, realice lo siguiente:
 1. En la ventana de *Windows PowerShell* en la que ha trabajado, coloque el siguiente comando para ver la lista de clústers de Kubernetes que hay en su cuenta:
 ```
 ibmcloud cs clusters
@@ -185,7 +166,7 @@ En la etiqueta **\<service>** indique un nombre para su servicio. Recuerde coloc
 ### Prueba de Funcionamiento 🏆
 Para verificar el correcto funcionamiento de su aplicación en Kubernetes realice lo siguiente:
 
-1. Si trabaja con infraestructura clásica su aplicación funcionará si coloca en el navegador **IP_Publica:port/api/customers**. Para obtener la IP Pública coloque el comando:
+1. Si trabaja con infraestructura clásica su aplicación funcionará si coloca en el navegador **IP_Publica:port**. Para obtener la IP Pública coloque el comando:
 ```
 ibmcloud ks workers --cluster <ID_Cluster>
 ```
@@ -195,10 +176,9 @@ Para obtener el puerto use el comando:
 kubectl get service <deployment>
 ```
 
-2. Si trabaja con VPC (Load Balancer), diríjase a la pestaña Service/Services dentro del panel de control de Kubernetes, visualice el servicio creado y de click en el external endpoint. Recuerde agregar al final de la URL **/api/customers**; con ello visualizará **[ ]** teniendo en cuenta que aun no tiene datos. 
+2. Si trabaja con VPC (Load Balancer), diríjase a la pestaña Service/Services dentro del panel de control de Kubernetes, visualice el servicio creado y de click en el external endpoint.  
 <p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-Backend-CRUD-Mongo/blob/main/Imagenes/Funcionamiento-Backend.gif"></p>
 
-Si desea agregar y visualizar datos en el backend en Kubernetes revise el repositorio <a href="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo"> Microservicios-FrontEnd-CRUD-Mongo</a>, en donde se hace la conexión del backend con el frontend de esta misma aplicación y el despliegue del frontend en Kubernetes.
 
 
 ## Autores ✒
