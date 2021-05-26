@@ -11,7 +11,7 @@
 7. [Paso 6. Prueba de Funcionamiento](#Paso-6)
 
 ## Pre-requisitos :pencil:
-* Tener instalado *Git* en su computador, para clonar el respositorio.
+* Tener instalado *Git* en su computador para clonar el respositorio.
 * Tener instalada la CLI de *Docker*.
 * Tener instalado *Docker Desktop* para verificar la creación de su imagen.
 * Tener instalada la CLI de IBM Cloud.
