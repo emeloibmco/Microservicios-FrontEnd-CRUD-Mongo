@@ -47,7 +47,7 @@ readonly URL_API_DELETE = 'URL_Backend';
 ```
 localhost:4200
 ```
-Una vez cargue la aplicación dpuede observar 3 ventanas distintas de la siguiente manera:
+Una vez cargue la aplicación puede observar 3 ventanas distintas de la siguiente manera:
 
 Una ventana de **Inicio** en donde puede observar dos botones que le dan las opciones: Agregar Transacción y Ver Transacciones.
 <p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo/blob/master/Imagenes/Inicio.PNG"></p>
