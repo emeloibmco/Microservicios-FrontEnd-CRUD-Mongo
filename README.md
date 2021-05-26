@@ -35,7 +35,7 @@ git clone https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo
 ## Paso 2. 
 ### Editar Frontend de la aplicación 🛠
 Para que el frontend de su aplicación funcione correctamente junto con el backend, debe agregar el enlace obtenido un vez ha desplegado el backend en Kubernetes. Por esto, siga los pasos que se muestran a continuación:
-1. Abra el código del frontend en su computador e ingrese a la siguiente ruta: src/app/services. En esta ubicación debe encontrar el archivo *query.service.ts*. Abra el archivo  y complete los siguientes campos con la URL obtenida en el despliegue del backend en Kubernetes (no olvide colocar **/api/customers**):
+1. Abra el código del frontend en su computador e ingrese a la siguiente ruta: src/app/services. En esta ubicación debe encontrar el archivo *query.service.ts*. Abra el archivo  y complete los siguientes campos con la URL obtenida en el despliegue del backend en Kubernetes entre las comillas (no olvide colocar **/api/customers**):
 
 ```
 readonly URL_API_CREATE_TRANSACTION = 'URL_Backend';
