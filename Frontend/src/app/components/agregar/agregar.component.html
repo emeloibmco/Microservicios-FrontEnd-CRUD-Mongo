@@ -1,0 +1,67 @@
+<body>
+  <div class="modal">
+    <div class="modal__container">
+      <div class="modal__featured">
+        <div class="modal__circle"></div>
+        <a class="navbar-brand" style="text-align: center; font-size:xx-large; font-family: 'Impact', cursive;  color: #000000;"> COMPANY.COM </a>
+      </div>
+      <div class="modal__content">
+        <h2>Transacción </h2>
+
+        <form>
+          <ul class="form-list">
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label>Nombre</label>
+                <div class="form-list__input-inline form-group">
+                  <input type="text" class="form-control" [(ngModel)]="form.nombre" name="nombre" placeholder="Nombre" required="" />
+                  <input type="text" class="form-control" name="apellido" placeholder="Apellido"  [(ngModel)]="form.apellido"  required="" />
+                </div>
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label>Localización</label>
+                <div class="form-list__input-inline form-group">
+                  <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" [(ngModel)]="form.ciudad" required="" />
+                  <input type="text" class="form-control" name="direccion" placeholder="Direccion" [(ngModel)]="form.direccion"   required="" />
+                </div>
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label></label>
+                <div class="form-list__input-inline form-group">
+                  <input type="text" class="form-control" name="cedular" placeholder="Cedula" [(ngModel)]="form.cedular"   required="" />
+                  <input type="date" class="form-control" name="fecha" placeholder="Fecha"  [(ngModel)]="form.fecha" required="" />
+                </div>
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label></label>
+                <div class="form-list__input-inline form-group">
+                  <input type="text" class="form-control" name="valor" placeholder="Valor $" [(ngModel)]="form.valor" required="" />
+                  <input type="text" class="form-control" name="tipo" placeholder="Tipo trans." [(ngModel)]="form.tipo" required="" />
+                </div>
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label></label>
+                <div class="form-list__input-inline form-group">
+                  <button type="submit" class="button" (click)="onSubmit()">Enviar</button>
+                  <button type="button" class="button" routerLink="/inicio" >Volver</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div> <!-- END: .modal__content -->
+    </div> <!-- END: .modal__container -->
+  </div> <!-- END: .modal -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>

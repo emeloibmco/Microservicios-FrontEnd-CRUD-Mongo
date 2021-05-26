@@ -1,0 +1,47 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+       <!--<div class="card-header">
+          <i class="fa fa-align-justify"></i> Proyectos
+        </div>-->
+        <nav class="navbar navbar-white bg-white justify-content-between" style="text-align: center;">
+          <a class="navbar-brand" style="text-align: center;"> Transacciones </a>
+        </nav>
+        <div class="card-body">
+          <!--table-bordered table-striped table-sm-->
+          <table class="table ">
+            <thead class="">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Ciudad</th>
+                <th>Fecha</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Cedula</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let client of queryservice.client">
+                <td>{{client.nombre}}</td>
+                <td>{{client.apellido}}</td>
+                <td>{{client.direccion}}</td>
+                <td>{{client.ciudad}}</td>
+                <td>{{client.fecha}}</td>
+                <td>{{client.valor}}</td>
+                <td>{{client.tipo}}</td>
+                <td>{{client.cedular}}</td>
+                <td>
+                  <button class="btn btn-primary" (click)="deleteData(client._id)"> Borrar </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

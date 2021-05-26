@@ -1,0 +1,27 @@
+.border-m{
+  padding: 20px;
+  width: 40%;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+.main-1
+{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn-center-cj
+{
+  position: absolute;
+  margin: 0 auto;
+}
+
+
+form {
+  max-width: 650px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
