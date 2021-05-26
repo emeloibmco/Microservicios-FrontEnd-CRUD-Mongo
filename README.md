@@ -4,10 +4,10 @@
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
 2. [Paso 1. Clonar Repositorio](#Paso-1)
-3. [Paso 2. Editar Backend de la aplicación con credenciales de servicio MongoDB público o privado](#Paso-2)
-4. [Paso 3. Crear imagen del Backend](#Paso-3)
-5. [Paso 4. Subir imagen del Backend a IBM Cloud Container Registry](#Paso-4)
-6. [Paso 5. Desplegar imagen del Backend en Kubernetes](#Paso-5)
+3. [Paso 2. Editar Frontend de la aplicación](#Paso-2)
+4. [Paso 3. Crear imagen del Frontend](#Paso-3)
+5. [Paso 4. Subir imagen del Front a IBM Cloud Container Registry](#Paso-4)
+6. [Paso 5. Desplegar imagen del Frontend en Kubernetes](#Paso-5)
 7. [Paso 6. Prueba de Funcionamiento](#Paso-6)
 
 ## Pre-requisitos :pencil:
@@ -16,8 +16,8 @@
 * Tener instalado *Docker Desktop* para verificar la creación de su imagen.
 * Tener instalada la CLI de IBM Cloud.
 * Contar con una cuenta en <a href="https://cloud.ibm.com/"> IBM Cloud </a>.
-* Implementar de forma previa un servicio "Databases for MongoDB" público o privado.
 * Contar con un clúster en Kubernetes.
+* Haber desplegado de forma previa el Backend de la aplicación en Kubernetes, para ello revise el repositorio <a href="https://github.com/emeloibmco/Microservicios-Backend-CRUD-Mongo"> Microservicios-Backend-CRUD-Mongo</a>.
 
 ## Paso 1
 ### Clonar Repositorio 🗂
@@ -33,7 +33,7 @@ git clone https://github.com/emeloibmco/Microservicios-Backend-CRUD-Mongo
 
 
 ## Paso 2. 
-### Editar Backend de la aplicación con credenciales de servicio MongoDB público 🔓 o privado 🔒
+### Editar Frontend de la aplicación 🛠
 Para que el backend de su aplicación funcione correctamente debe agregar las respectivas credenciales del servicio *Databases for MongoDB* en el código. Por esto, siga los pasos que se muestran a continuación:
 1. Ingrese al servicio *Databases for MongoDB* creado de forma previa, recuerde que puede ser público o privado. Este servicio lo puede encontrar en la lista de recursos de su cuenta.
 
@@ -83,7 +83,7 @@ localhost:8080/api/customers
 
 
 ## Paso 3. 
-### Crear imagen del Backend 📱
+### Crear imagen del Frontend 📱
 Al clonar este repositorio puede encontrar dentro de los archivos el *Dockerfile* utilizado para crear la imagen de la aplicación. Realice los siguientes pasos:
 1. En la ventaja de *Windows PowerShell* y asegurándose que se encuentra dentro de la carpeta que contiene los archivos de la aplicación y el Dockerfile, coloque el siguiente comando para crear la imagen de su aplicación:
 ```
@@ -105,7 +105,7 @@ localhost:port/api/customers
 
 
 ## Paso 4. 
-### Subir imagen del Backend a IBM Cloud Container Registry 📤
+### Subir imagen del Frontend a IBM Cloud Container Registry 📤
 Para subir la imagen creada a *IBM Cloud Container Registry* realice lo siguiente:
 1. En la ventana de *Windows PowerShell* y sin salir en ningún momento de la carpeta que contiene los archivos, inicie sesión en su cuenta de *IBM Cloud* con el siguiente comando:
 ```
@@ -146,7 +146,7 @@ docker push us.icr.io/<namespace>/<nombre_imagen:tag>
 
 
 ## Paso 5.
-### Desplegar imagen del Backend en Kubernetes🚀
+### Desplegar imagen del Frontend en Kubernetes🚀
 Para desplegar la imagen del backend de la aplicación en Kubernetes, realice lo siguiente:
 1. En la ventana de *Windows PowerShell* en la que ha trabajado, coloque el siguiente comando para ver la lista de clústers de Kubernetes que hay en su cuenta:
 ```
