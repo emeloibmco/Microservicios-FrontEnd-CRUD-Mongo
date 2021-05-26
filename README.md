@@ -159,7 +159,7 @@ En la etiqueta **\<service>** indique un nombre para su servicio. Recuerde coloc
 
 
 5. Por último verifique que el deployment y el service creados aparecen de forma exitosa en el panel de control de su clúster.
-<p align="center"><img width="1000" src="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo/blob/master/Imagenes/Dashboard-K-Frontend.gif></p>
+<p align="center"><img width="1000" src="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo/blob/master/Imagenes/Dashboard-K-Frontend.gif"></p>
 
 
 ## Paso 6.
