@@ -52,7 +52,7 @@ Una vez cargue la aplicación puede observar 3 ventanas distintas de la siguient
 Una ventana de **Inicio** en donde puede observar dos botones que le dan las opciones: Agregar Transacción y Ver Transacciones.
 <p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo/blob/master/Imagenes/Inicio.PNG"></p>
 
-Una ventana de **Agregar Transacción** en donde puede colocar los datos respectivos.
+Una ventana de **Agregar** en donde puede colocar los datos respectivos de su transacción.
 <p align="center"><img width="700" src="https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo/blob/master/Imagenes/Agregar.PNG"></p>
 
 Una ventana de **Ver Transacciones** en donde puede visualizar las transacciones agregadas.
