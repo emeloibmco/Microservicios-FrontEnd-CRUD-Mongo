@@ -29,7 +29,7 @@ La aplicación utilizada en esta guía la puede encontrar en este repositorio. P
 ```
 git clone https://github.com/emeloibmco/Microservicios-FrontEnd-CRUD-Mongo
 ```
-4. Acceda a la carpeta **"Microservicios-Frontend-CRUD-Mongo"** creada al clonar el repositorio y verifique que se encuentran descargados los archivos de la aplicación que se muestran en este repositorio.
+4. Acceda a la carpeta **"Microservicios-FrontEnd-CRUD-Mongo"** creada al clonar el repositorio y verifique que se encuentran descargados los archivos de la aplicación que se muestran en este repositorio.
 
 
 ## Paso 2. 
