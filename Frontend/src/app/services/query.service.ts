@@ -10,9 +10,9 @@ export class QueryService {
   selectclients: Clientmodel;
   client: Clientmodel[];
 
-  readonly URL_API_CREATE_TRANSACTION = 'http://65b071b7-us-south.lb.appdomain.cloud:8080/api/customers';
-  readonly URL_API_GET_TRANSACTIONS = 'http://65b071b7-us-south.lb.appdomain.cloud:8080/api/customers';
-  readonly URL_API_DELETE = 'http://65b071b7-us-south.lb.appdomain.cloud:8080/api/customers';
+  readonly URL_API_CREATE_TRANSACTION = '';
+  readonly URL_API_GET_TRANSACTIONS = '';
+  readonly URL_API_DELETE = '';
 
   constructor(public httpClient: HttpClient)
   {
